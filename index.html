@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors <br>👊📄✂️ </h1>
+
+        <label for = 'mode'>Choose Mode:</label>
+        <select id = 'mode' onchange="setBestOf(this.value)">
+            <option value="3">Best of 3</option>
+            <option value="5">Best of 5</option>
+            <option value="7">Best of 7</option>
+        </select>
+
+        <br><br>
+        <label for="game-type">Game type:</label>
+        <select id="game-type">
+            <option value="cpu">Player vs Computer</option>
+            <option value="pvp">Player 1 vs Player 2</option>
+        </select>
+
+        <div class="choices">
+            <button onclick="play('rock')" class="choice">👊</button>
+            <button onclick="play('paper')" class="choice">📄</button>
+            <button onclick="play('scissors')"class="choice">✂️</button>
+        </div>
+        <p id="result">Make your move!</p>
+        <div class="scoreboard">
+            <p id="player 1-label">Player: <span id="player-score">0</span></p>
+            <p id="player 2-label">Computer: <span id="computer-score">0</span></p>
+            <p>Rounds: <span id="rounds">0</span></p>
+        </div>
+
+        <button class="restart-btn" onclick="restartGame()">Restart Game</button>
+
+    </div>
+
+    <div class="modal" id="winnerModal">
+        <div class="modal-content">
+            <h2 id="winnerMessage"></h2>
+            <button onclick="closeModal()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
