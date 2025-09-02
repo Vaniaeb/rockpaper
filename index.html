@@ -18,10 +18,10 @@
         </select>
 
         <br><br>
-        <label for="game-type">Game type:</label>
-        <select id="game-type">
-            <option value="cpu">Player vs Computer</option>
-            <option value="pvp">Player 1 vs Player 2</option>
+        <label for="playerMode">Game type:</label>
+        <select id="playerMode" onchange="setPlayerMode(this.value)">
+            <option value="computer">Player vs Computer</option>
+            <option value="two">Player 1 vs Player 2</option>
         </select>
 
         <div class="choices">
@@ -39,7 +39,7 @@
         <button class="restart-btn" onclick="restartGame()">Restart Game</button>
 
     </div>
-
+    </div>
     <div class="modal" id="winnerModal">
         <div class="modal-content">
             <h2 id="winnerMessage"></h2>
